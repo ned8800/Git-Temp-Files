@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sanya/PROJECT_FILMS/prj/src/database.cpp
+database.hpp
+/home/sanya/PROJECT_FILMS/prj/src/database.hpp
+
+prj/include/database.hpp
+string
+-
+vector
+-
+map
+-
+cstring
+-
+iostream
+-
+
