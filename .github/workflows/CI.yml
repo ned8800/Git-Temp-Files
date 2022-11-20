@@ -24,7 +24,7 @@ jobs:
         run: sudo apt install cppcheck
       
       - name: Check files
-        run: python checkFiles.py
+        run: python cppLintCheck.py
 
   Build:
     needs: [RunLinters]
