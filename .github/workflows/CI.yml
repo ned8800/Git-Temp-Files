@@ -30,7 +30,10 @@ jobs:
         run: python cppLintCheck.py
 
       - name: Format check
-        run: sh clang_format.sh
+        run: sh format_check.sh
+
+      - name: Tidy check
+        run: sh tidy_check.sh
 
   Build:
     needs: [RunLinters]
