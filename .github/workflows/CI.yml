@@ -30,7 +30,7 @@ jobs:
         run: python cppLintCheck.py
 
       - name: Format check
-        run: ./clang_format.sh
+        run: sh clang_format.sh
 
   Build:
     needs: [RunLinters]
@@ -42,6 +42,7 @@ jobs:
           cmake -DTEST=1 -B build
           cmake --build build
 #         сюда команду с флагами
+
 
       - name: Upload our build dir
         uses: actions/upload-artifact@v3
