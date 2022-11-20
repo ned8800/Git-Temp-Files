@@ -32,9 +32,6 @@ jobs:
       - name: Format check
         run: sh format_check.sh
 
-      - name: Tidy check
-        run: sh tidy_check.sh
-
   Build:
     needs: [RunLinters]
     runs-on: ubuntu-latest
