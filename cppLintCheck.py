@@ -16,4 +16,4 @@ for root, dirs, files in os.walk("."):
     for file in files:
         if not root.startswith("./build"):
             if file.endswith(".cpp"):
-                subprocess.run(['clang-format', os.path.join(root, file)])
+                subprocess.run(['clang-format -i -style=LLVM', os.path.join(root, file)])

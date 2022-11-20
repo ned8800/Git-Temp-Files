@@ -28,6 +28,9 @@ jobs:
       
       - name: Check files
         run: python cppLintCheck.py
+      
+      - name: Check files
+        run: python cppLintCheck.py 
 
   Build:
     needs: [RunLinters]
@@ -67,16 +70,3 @@ jobs:
       - name: Test
         run: valgrind --tool=memcheck --leak-check=yes ctest -VV
         working-directory: build
-    
-      - name: Coverage install and run
-        run: |
-          sudo apt install lcov -y
-          lcov -t "tests/tests" -o coverage.info -c -d tests/
-          genhtml -o report coverage.info
-        working-directory: build
-      
-      - name: Save coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage
-          path: ${{github.workspace}}/build/report
